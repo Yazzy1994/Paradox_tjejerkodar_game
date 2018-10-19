@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="libs/phaser-3.14.0/dist/phaser.js"></script> 
+    <script src="js/title-screen.js"></script> 
+    <script src="js/main-game.js"></script> 
+    <script src="js/game-over-screen.js"></script> 
+</head>
+<body>
+
+    <script>
+        let config = {
+            type: Phaser.AUTO,
+            width: 600,
+            height: 600,
+            parent: "game-area",
+            physics: {
+                default: 'arcade',
+                arcade: { 
+                    debug: true                    
+                }
+            },
+            scene: [TitleScene, MainGameScene, GameOverScene]
+        };   
+        
+        var game = new Phaser.Game(config);
+    </script>
+    
+    <div id="game-area"></div>
+
+</body>
+</html>
